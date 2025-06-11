@@ -5,7 +5,7 @@ import { Providers } from "./providers";
 
 
 export const metadata: Metadata = {
-  title: "Create Next App",
+  title: "Registro Acesso PET",
   description: "Form to register a new user for access security system",
 };
 
