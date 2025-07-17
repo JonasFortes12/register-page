@@ -7,9 +7,9 @@ import { ref, set, onValue, remove, off } from "firebase/database";
 import Image from "next/image";
 
 export default function Home() {
-  const [loading, setLoading] = useState<Boolean>(false);
-  const [success, setSuccess] = useState<Boolean>(false);
-  const [pending, setPending] = useState<Boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [success, setSuccess] = useState<boolean>(false);
+  const [pending, setPending] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const TIMER = 120; // em segundos
   const [timer, setTimer] = useState<number>(TIMER); // 2 minutos em segundos
@@ -56,7 +56,7 @@ export default function Home() {
       await remove(pendingUsersRef);
       setPending(false);
     } catch (err) {
-      setError("Erro ao limpar cadastros pendentes");
+      setError(`Erro ao limpar cadastros pendentes. Erro: ${err} `);
     }
   };
 
@@ -98,13 +98,12 @@ export default function Home() {
 
     try {
       // Adiciona usuário pendente ao Firebase
-      const pendingUsersRef = ref(database, "pendingUser");
       await set(ref(database, "pendingUser/current"), userData);
 
       setLoading(false);
       setSuccess(true);
     } catch (err) {
-      setError("Erro ao enviar dados. Por favor, tente novamente.");
+      setError(`Erro ao enviar dados. Por favor, tente novamente. Erro: ${err}`);
       setLoading(false);
     }
   };
