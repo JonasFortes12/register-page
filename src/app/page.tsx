@@ -109,7 +109,7 @@ export default function Home() {
   };
 
   return (
-    <main className="bg-slate-50 flex flex-col h-screen items-center justify-center gap-5 p-2 ">
+    <main className="bg-slate-50 flex flex-col min-h-screen items-center justify-center gap-4 p-2 ">
       <Image
         src="/logo-pet-flat-escuro.svg"
         alt="Logo do PET"
@@ -158,7 +158,7 @@ export default function Home() {
 
       {/* Mensagens de status */}
       {loading && (
-        <div className="bg-blue-100 flex flex-col items-center justify-center mt-4 border p-4 rounded-lg">
+        <div className="bg-blue-100 flex flex-col items-center justify-center border p-4 rounded-lg">
           <h1 className="text-blue-700 font-bold block text-lg">Aguarde...</h1>
           <p className="text-blue-700 max-w-md text-center">
             Estamos iniciando seu cadastro. Por favor, aguarde alguns instantes.
@@ -167,7 +167,7 @@ export default function Home() {
       )}
 
       {success && (
-        <div className="bg-green-100 flex flex-col items-center justify-center mt-4 border p-4 rounded-lg">
+        <div className="bg-green-100 flex flex-col items-center justify-center border p-4 rounded-lg">
           <h1 className="text-green-700 font-bold block text-lg">
             Cadastro iniciado com sucesso!
           </h1>
@@ -186,7 +186,7 @@ export default function Home() {
       )}
 
       {pending && !success && (
-        <div className="bg-yellow-100 flex flex-col items-center justify-center mt-4 border p-4 rounded-lg">
+        <div className="bg-yellow-100 flex flex-col items-center justify-center mt-2 border p-4 rounded-lg">
           <h1 className="text-yellow-700 font-bold block text-lg">
             Cadastro pendente!
           </h1>
@@ -198,7 +198,7 @@ export default function Home() {
       )}
 
       {error && (
-        <div className="bg-red-100 flex flex-col items-center justify-center mt-4 border p-4 rounded-lg">
+        <div className="bg-red-100 flex flex-col items-center justify-center border p-4 rounded-lg">
           <h1 className="text-red-700 font-bold block text-lg">Erro!</h1>
           <p className="text-red-700 max-w-md text-center">{error}</p>
         </div>
